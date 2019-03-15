@@ -10,13 +10,12 @@ package frc.robot.subsystems;
 //import edu.wpi.first.wpilibj.AnalogGyro;
 //import edu.wpi.first.wpilibj.AnalogInput;
 //import edu.wpi.first.wpilibj.Encoder;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
-//import frc.robot.Robot;
 import frc.robot.commands.TankDrive;
 
 /**
@@ -70,11 +69,11 @@ public class DriveTrain extends Subsystem {
    */
   @Override
   public void initDefaultCommand() {
-    //setDefaultCommand(new TankDrive());
-    LiveWindow.add(frontRight);
-    LiveWindow.add(frontLeft);
-    LiveWindow.add(backRight);
-    LiveWindow.add(backRight);
+    setDefaultCommand(new TankDrive());
+    // LiveWindow.add(frontRight);
+    // LiveWindow.add(frontLeft);
+    // LiveWindow.add(backRight);
+    // LiveWindow.add(backRight);
   }
 
   /**
@@ -89,9 +88,6 @@ public class DriveTrain extends Subsystem {
    * @param right Speed in range [-1,1]
    */
   public void drive(double left, double right) {
-    System.out.print(right);
-    System.out.print(" ");
-    System.out.println(left);
     frontRight.set(right);
     frontLeft.set(left);
     backRight.set(right);

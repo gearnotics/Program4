@@ -21,12 +21,12 @@ public class RobotMap {
   public static final int DRIVETRAIN_RIGHT_FRONT_SPARK = 1;
   public static final int DRIVETRAIN_LEFT_BACK_SPARK = 2;
   public static final int DRIVETRAIN_RIGHT_BACK_SPARK = 3;
-  public static final int DRIVETRAIN_LEFT_BALL_SPARK = 4;
-  public static final int DRIVETRAIN_RIGHT_BALL_SPARK = 5;
+  public static final int SHOOTER_LEFT_BALL_SPARK = 4;
+  public static final int SHOOTER_RIGHT_BALL_SPARK = 5;
 
-  public static final int OI_DRIVER_CONTROLLER = 0;
-  public static final String DRIVER_CONTROLLER_ROTATE_AXIS = null;
-  public static final String DRIVER_CONTROLLER_MOVE_AXIS = null;
+  // public static final int OI_DRIVER_CONTROLLER = 0;
+  // public static final String DRIVER_CONTROLLER_ROTATE_AXIS = null;
+  // public static final String DRIVER_CONTROLLER_MOVE_AXIS = null;
 
   // solenoids
   public static final int LIFT_PITCH_SOLENOID_DEPLOY = 0;

@@ -10,12 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.ShooterIn;
-import frc.robot.commands.ShooterOut;
-import frc.robot.commands.LiftDown;
-import frc.robot.commands.LiftUp;
-import frc.robot.commands.GrabberIn;
-import frc.robot.commands.GrabberOut;
+import frc.robot.commands.*;
 
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -38,7 +33,7 @@ public class OI {
   public Joystick driverController2 = new Joystick(1);
   
   //// CREATING BUTTONS
-  
+  // Controller 1
   Button aBtn = new JoystickButton(driverController, 1);
   Button bBtn = new JoystickButton(driverController, 2);
   Button xBtn = new JoystickButton(driverController, 3);
@@ -50,6 +45,7 @@ public class OI {
   Button leftJoyClick = new JoystickButton(driverController, 9);
   Button rightJoyClick = new JoystickButton(driverController, 10); 
 
+  // Controller 2
   Button aBtn2 = new JoystickButton(driverController2, 1);
   Button bBtn2 = new JoystickButton(driverController2, 2);
   Button xBtn2 = new JoystickButton(driverController2, 3);
@@ -68,14 +64,18 @@ public class OI {
     yBtn.whileHeld(new LiftDown());
 
     leftBmp.whileHeld(new ShooterIn());
+    leftBmp.whenReleased(new ShootStop());
     rightBmp.whileHeld(new ShooterOut());
+    rightBmp.whenReleased(new ShootStop());
 
     xBtn.whenPressed(new GrabberIn());
     bBtn.whenPressed(new GrabberOut());
 
     // Controller 2
     leftBmp2.whileHeld(new ShooterIn());
+    leftBmp2.whenReleased(new ShootStop());
     rightBmp2.whileHeld(new ShooterOut());
+    rightBmp2.whenReleased(new ShootStop());
 
     xBtn2.whenPressed(new GrabberIn());
     bBtn2.whenPressed(new GrabberOut());
