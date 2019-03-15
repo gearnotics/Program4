@@ -63,6 +63,7 @@ public class OI {
 
   //mapping joystick buttons
   public OI(){
+    // Controller 1
     aBtn.whileHeld(new LiftUp());
     yBtn.whileHeld(new LiftDown());
 
@@ -71,5 +72,12 @@ public class OI {
 
     xBtn.whenPressed(new GrabberIn());
     bBtn.whenPressed(new GrabberOut());
+
+    // Controller 2
+    leftBmp2.whileHeld(new ShooterIn());
+    rightBmp2.whileHeld(new ShooterOut());
+
+    xBtn2.whenPressed(new GrabberIn());
+    bBtn2.whenPressed(new GrabberOut());
   }
 }
